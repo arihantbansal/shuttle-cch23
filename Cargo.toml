@@ -1,5 +1,5 @@
 [package]
-name = "cch23--1"
+name = "cch23"
 version = "0.1.0"
 edition = "2021"
 
@@ -9,3 +9,4 @@ shuttle-axum = "0.39.0"
 shuttle-runtime = "0.39.0"
 tokio = "1.28.2"
 tracing = "0.1.40"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
