@@ -1,12 +1,12 @@
 use axum::{response::IntoResponse, Json};
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
-#[derive(Serialize)]
+#[derive(Serialize, Deserialize)]
 struct ElfCount {
     elf: usize,
-    #[serde(alias = "elf on a shelf")]
+    #[serde(rename = "elf on a shelf")]
     elf_on_a_shelf: usize,
-    #[serde(alias = "shelf with no elf on it")]
+    #[serde(rename = "shelf with no elf on it")]
     shelf_with_no_elf_on_it: usize,
 }
 
