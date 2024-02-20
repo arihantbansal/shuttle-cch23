@@ -4,7 +4,7 @@ use axum::{
 };
 
 mod challenges;
-use challenges::{c00, c01, c04, c05, c06, c07};
+use challenges::{c00, c01, c04, c05, c06, c07, c08};
 use tracing::info;
 
 #[shuttle_runtime::main]
@@ -21,7 +21,8 @@ async fn main() -> shuttle_axum::ShuttleAxum {
         .route("/5", post(c05::slice_params))
         .route("/6", post(c06::count_elf))
         .route("/7/decode", get(c07::base64_cookies))
-        .route("/7/bake", get(c07::bake_cookies));
+        .route("/7/bake", get(c07::bake_cookies))
+        .route("/8/weight/:pokedex_number", get(c08::poke_weight));
 
     Ok(router.into())
 }
