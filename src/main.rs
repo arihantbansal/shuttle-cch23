@@ -22,7 +22,8 @@ async fn main() -> shuttle_axum::ShuttleAxum {
         .route("/6", post(c06::count_elf))
         .route("/7/decode", get(c07::base64_cookies))
         .route("/7/bake", get(c07::bake_cookies))
-        .route("/8/weight/:pokedex_number", get(c08::poke_weight));
+        .route("/8/weight/:pokedex_number", get(c08::poke_weight))
+        .route("/8/drop/:pokedex_number", get(c08::poke_momentum));
 
     Ok(router.into())
 }
